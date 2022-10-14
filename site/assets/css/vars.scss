@@ -74,7 +74,7 @@ $v-rhythm-levels: (
 }
 
 @mixin dark {
-  @media (prefers-color-scheme: dark){
-    @content;
-  }
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
 }

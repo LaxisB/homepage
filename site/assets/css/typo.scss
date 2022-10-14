@@ -1,7 +1,5 @@
 @use "vars";
 
-
-
 h1,
 h2,
 h3,
@@ -28,7 +26,7 @@ p {
 a {
     color: var(--link-color);
 }
-strong{
+strong {
     font-weight: bold;
     @include vars.v-rhythm(1);
 }

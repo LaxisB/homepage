@@ -1,9 +1,8 @@
-
 title: Figure
-accept: 
-  mime: image/*, video/*
-  type: image, video
+accept:
+    mime: image/*, video/*
+    type: image, video
 fields:
-  alt: 
-    label: Alt Text
-    type: text
+    alt:
+        label: Alt Text
+        type: text

@@ -9,19 +9,19 @@ tabs:
             left:
                 width: 2/3
                 sections:
-                  data:
-                    type: fields
-                    fields:
-                      links:
-                        type: structure
+                    data:
+                        type: fields
                         fields:
-                          label:
-                            type: text
-                          name:
-                            type: text
-                          href:
-                            type: text
-                      
+                            links:
+                                type: structure
+                                fields:
+                                    label:
+                                        type: text
+                                    name:
+                                        type: text
+                                    href:
+                                        type: text
+
             right:
                 width: 1/3
                 sections:

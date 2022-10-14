@@ -11,38 +11,36 @@
 }
 
 :root {
-  --primary: #88c0d0;
-  --gray01: #2e3440;
-  --gray02: #434c5e;
-  --gray03: #99a4bb;
-  --gray04: #d8dee9;
-  --gray05: #eceff4;
+    --primary: #88c0d0;
+    --gray01: #2e3440;
+    --gray02: #434c5e;
+    --gray03: #99a4bb;
+    --gray04: #d8dee9;
+    --gray05: #eceff4;
 
+    --site-foreground: var(--gray01);
+    --site-background: var(--gray04);
 
-  --site-foreground: var(--gray01);
-  --site-background: var(--gray04);
+    --off-color: var(--gray2);
+    --link-color: var(--primary);
 
-  --off-color: var(--gray2);
-  --link-color: var(--primary);
-
-    @media(prefers-color-scheme: dark){
-      --site-foreground: var(--gray04);
-      --site-background: var(--gray01);
-      --off-color: var(--gray03);
-
+    @media (prefers-color-scheme: dark) {
+        --site-foreground: var(--gray04);
+        --site-background: var(--gray01);
+        --off-color: var(--gray03);
     }
 }
 
 html {
     background: var(--site-background);
     color: var(--site-foreground);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
     font-smooth: auto;
     font-size: vars.$fontSize;
     scroll-behavior: smooth;
-
 }
 
 body {
@@ -62,38 +60,50 @@ body {
     }
 }
 
-img{
+img {
     width: 100%;
 }
 
 .content {
-  --gap: 1rem;
-  --full: minmax(var(--gap), 1fr);
-  --content: min(75em, 100% - var(--gap) * 2);
-  --popout: minmax(0, 5rem);
-  --wide: minmax(0, 10rem);
+    --gap: 1rem;
+    --full: minmax(var(--gap), 1fr);
+    --content: min(75em, 100% - var(--gap) * 2);
+    --popout: minmax(0, 5rem);
+    --wide: minmax(0, 10rem);
 
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [popup-start] var(--popout)
+        [content-start] var(--content) [content-end]
+        var(--popout) [popout-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
+    grid-template-rows: min-content;
 
-  display: grid;
-  grid-template-columns: [full-start] var(--full)
-                         [wide-start] var(--wide)
-                         [popup-start] var(--popout)
-                         [content-start] var(--content) [content-end]
-                         var(--popout) [popout-end]
-                         var(--wide) [wide-end]
-                         var(--full) [full-end];
-  grid-template-rows: min-content;
-
-  >*{ grid-column: content;}
-  &__popout{ grid-column: popout;}
-  &__wide{ grid-column: wide; }
-  &__full{ grid-column: full;}
-
+    > * {
+        grid-column: content;
+    }
+    &__popout {
+        grid-column: popout;
+    }
+    &__wide {
+        grid-column: wide;
+    }
+    &__full {
+        grid-column: full;
+    }
 }
-.popout{ grid-column: popout;}
-.wide{ grid-column: wide; }
-.full{ grid-column: full;}
-
+.popout {
+    grid-column: popout;
+}
+.wide {
+    grid-column: wide;
+}
+.full {
+    grid-column: full;
+}
 
 .grid {
     display: grid;
@@ -102,19 +112,17 @@ img{
     padding: 0 1em;
 }
 
-@for $i from 1 through 12{
-    .spans--#{$i}{
+@for $i from 1 through 12 {
+    .spans--#{$i} {
         grid-column-start: span #{$i};
     }
-
 }
 
-
-
-figure{
+figure {
     box-shadow: 0 4px 50px rgba(0, 0, 0, 0.15);
 
-    img,video{
+    img,
+    video {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -122,9 +130,8 @@ figure{
     }
 }
 
-
-.button{
-    padding: .5em 1em;
+.button {
+    padding: 0.5em 1em;
     border-radius: 3px;
     border: 2px solid currentColor;
     color: var(--primary);
@@ -133,20 +140,17 @@ figure{
     text-decoration: none;
     user-select: none;
 
-    &:hover{
+    &:hover {
         color: var(--primary-dark);
     }
 
-    &:active{
+    &:active {
         background: var(--primary-dark);
         color: var(--site-foreground);
     }
 }
 
-
-
 // utils
-
 
 // offset anchor links 100px from the top
 :target:before {
@@ -156,6 +160,6 @@ figure{
     margin: -100px 0 0 0;
 }
 
-.float{
+.float {
     float: right;
 }

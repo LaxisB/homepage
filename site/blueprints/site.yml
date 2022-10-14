@@ -3,33 +3,32 @@ title: Site
 tabs:
     content:
         columns:
-          main: 
-            width: 2/3
-            sections:
-                pages:
-                    headline: Seiten
-                    type: pages
-                    layout: cards
-                nav:
-                  headline: Nav
-                  type: fields
-                  fields:
-                    navigation:
-                      type: pages
+            main:
+                width: 2/3
+                sections:
+                    pages:
+                        headline: Seiten
+                        type: pages
+                        layout: cards
+                    nav:
+                        headline: Nav
+                        type: fields
+                        fields:
+                            navigation:
+                                type: pages
 
-
-          side:
-            width: 1/3
-            sections:
-                data:
-                    headline: Data
-                    type: fields
-                    fields:
-                        logo:
-                            type: files
-                            multiple: false
-                            mime: image/*
-                            required: true
+            side:
+                width: 1/3
+                sections:
+                    data:
+                        headline: Data
+                        type: fields
+                        fields:
+                            logo:
+                                type: files
+                                multiple: false
+                                mime: image/*
+                                required: true
 
     tasks:
         sections:

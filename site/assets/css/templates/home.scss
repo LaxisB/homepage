@@ -1,122 +1,115 @@
 @use "../vars";
 
-main{
-  display: grid;
-  align-items: center;
-  justify-content: center;
+main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
-.card{
-  padding: 1rem;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 100px 1fr;
-  grid-column-gap: 8rem;
-  grid-template-columns: 1fr;
-  box-shadow: 0 1vmin 50px rgba(0, 0, 0, 6%), 0 1vmin 20px rgba(0, 0, 0, 5%);
-  background: rgba(0, 0, 0, 0.02);
-
-  @include vars.media-tablet{
-    padding: 5rem 8rem;
-    grid-template-columns: 100px 1fr;
+.card {
+    padding: 1rem;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr;
     grid-column-gap: 8rem;
-    grid-template-rows: 1fr;
-    height: auto;
+    grid-template-columns: 1fr;
+    box-shadow: 0 1vmin 50px rgba(0, 0, 0, 6%), 0 1vmin 20px rgba(0, 0, 0, 5%);
+    background: rgba(0, 0, 0, 0.02);
 
-  }
-
-  &__logo {
-    margin: 2em auto 2em 21%; // visually center;
-    grid-row: 1/6;
-    stroke-dashoffset: 1500;
-    stroke-dasharray: 500;
-    stroke-width: 8px;
-    stroke: white;
-    stroke: var(--primary);
-    width: 50%;
-    align-self: center;
-    animation: logo-appear 2000ms cubic-bezier(0.45, 0, 0.55, 1) forwards;
-    fill: none;
-
-    @include vars.media-tablet{
-      width: 100%;
-      margin: 0;
-    }
-  }
-  .list{
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: .5em;
-
-    &__row{
-      margin: 0;
-      padding: 0;
-      opacity: 0;
-      animation: appear 0.5s ease-out forwards;
-      animation-delay: 200ms;
-      flex: none;
+    @include vars.media-tablet {
+        padding: 5rem 8rem;
+        grid-template-columns: 100px 1fr;
+        grid-column-gap: 8rem;
+        grid-template-rows: 1fr;
+        height: auto;
     }
 
-    &__key,
-    &__value{
-      padding: 0 .5em;
+    &__logo {
+        margin: 2em auto 2em 21%; // visually center;
+        grid-row: 1/6;
+        stroke-dashoffset: 1500;
+        stroke-dasharray: 500;
+        stroke-width: 8px;
+        stroke: white;
+        stroke: var(--primary);
+        width: 50%;
+        align-self: center;
+        animation: logo-appear 2000ms cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        fill: none;
 
+        @include vars.media-tablet {
+            width: 100%;
+            margin: 0;
+        }
     }
-    &__key{
-      display: inline-block;
-      width: 5em;
-      font-size: 0.83333em;
-      color: var(--gray02);
+    .list {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 0.5em;
 
-      @include vars.dark{
-        color: var(--gray03);
-      }
+        &__row {
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            animation: appear 0.5s ease-out forwards;
+            animation-delay: 200ms;
+            flex: none;
+        }
+
+        &__key,
+        &__value {
+            padding: 0 0.5em;
+        }
+        &__key {
+            display: inline-block;
+            width: 5em;
+            font-size: 0.83333em;
+            color: var(--gray02);
+
+            @include vars.dark {
+                color: var(--gray03);
+            }
+        }
+
+        &__value {
+            color: var(--text-foreground);
+            text-decoration: none;
+            position: relative;
+            &:is(a)::before {
+                position: absolute;
+                display: inline-block;
+                width: 20%;
+                height: 1px;
+                bottom: -2px;
+                left: 0.5em;
+                content: "";
+                background: var(--primary);
+            }
+        }
     }
-
-    &__value{
-      color: var(--text-foreground);
-      text-decoration: none;
-      position: relative;
-      &:is(a)::before{
-        position: absolute;
-        display:inline-block;
-        width: 20%;
-        height: 1px;
-        bottom: -2px;
-        left: .5em;
-        content: '';
-        background: var(--primary);
-      
-      }
-    }
-  }
-
-
-
-
 }
 @keyframes logo-appear {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  30% {
-    opacity: 1;
-  }
+    30% {
+        opacity: 1;
+    }
 
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 4570;
-  }
+    to {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 4570;
+    }
 }
 @keyframes appear {
-  0% {
-    opacity: 0.2;
-  }
+    0% {
+        opacity: 0.2;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
