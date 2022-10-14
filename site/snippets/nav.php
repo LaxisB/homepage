@@ -1,7 +1,7 @@
 <nav class="nav <?= isset($fixed) && $fixed ? "nav--fixed" : "" ?> <?= isset($links) && count($links) > 0
                                                                       ? "nav--wide"
                                                                       : "nav--narrow" ?>">
-  <div class="container container--wide">
+  <div class="content">
     <div class="nav__content">
       <a href="/" class="nav__logo" aria-label="Link to Home">
         <img aria-hidden="true" src="<?= $site
@@ -22,8 +22,9 @@
 
       <?php if ($site->navigation()->isNotEmpty()) : ?>
         <div class="nav__smallinks">
-          <?php foreach ($site->navigation() as $page) : ?>
-            <a class="nav__link <?= $page->isOpen() ? 'nav__link--active' : 'nav__link--inactive' ?>" href="<?= $page->url() ?>"><?= $page->text() ?></a>
+          <?php foreach ($site->navigation()->toPages() as $page) :
+          ?>
+            <a class="nav__link" href="<?= $page->url() ?>"><?= $page->title() ?></a>
           <?php endforeach; ?>
         </div>
       <?php endif;

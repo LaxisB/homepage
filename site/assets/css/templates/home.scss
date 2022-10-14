@@ -69,6 +69,10 @@ main{
       width: 5em;
       font-size: 0.83333em;
       color: var(--gray02);
+
+      @include vars.dark{
+        color: var(--gray03);
+      }
     }
 
     &__value{

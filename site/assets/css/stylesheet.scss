@@ -14,14 +14,23 @@
   --primary: #88c0d0;
   --gray01: #2e3440;
   --gray02: #434c5e;
-  --gray03: #d8dee9;
-  --gray04: #eceff4;
+  --gray03: #99a4bb;
+  --gray04: #d8dee9;
+  --gray05: #eceff4;
 
 
   --site-foreground: var(--gray01);
   --site-background: var(--gray04);
 
+  --off-color: var(--gray2);
   --link-color: var(--primary);
+
+    @media(prefers-color-scheme: dark){
+      --site-foreground: var(--gray04);
+      --site-background: var(--gray01);
+      --off-color: var(--gray03);
+
+    }
 }
 
 html {
@@ -33,6 +42,7 @@ html {
     font-smooth: auto;
     font-size: vars.$fontSize;
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -45,6 +55,7 @@ body {
 
     main {
         flex: 1 1 auto;
+        margin-top: 5em;
     }
     footer {
         flex: none;
@@ -56,7 +67,6 @@ img{
 }
 
 .content {
-    margin-top: 5em;
     --gap: 1rem;
     --full: minmax(var(--gap), 1fr);
     --content: min(75em, 100% - var(--gap) * 2);
