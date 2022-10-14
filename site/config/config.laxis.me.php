@@ -12,7 +12,7 @@ return [
   "panel.install" => true,
   "smartypants" => true,
   "lukaskleinschmidt.terminal.scripts" => [
-    "deploy" => 'echo "assume i\'m deploying now"',
+    "deploy" => 'cd /home/www/homepage && ./deploy.sh',
   ],
   "thumbs" => [
     "srcsets" => [
