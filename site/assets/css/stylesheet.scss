@@ -67,22 +67,24 @@ img{
 }
 
 .content {
-    --gap: 1rem;
-    --full: minmax(var(--gap), 1fr);
-    --content: min(75em, 100% - var(--gap) * 2);
-    --popout: minmax(0, 5rem);
-    --wide: minmax(0, 10rem);
+  --gap: 1rem;
+  --full: minmax(var(--gap), 1fr);
+  --content: min(75em, 100% - var(--gap) * 2);
+  --popout: minmax(0, 5rem);
+  --wide: minmax(0, 10rem);
 
 
-    display: grid;
-    grid-template-columns: [full-start] var(--full)
-                           [wide-start] var(--wide)
-                           [popup-start] var(--popout)
-                           [content-start] var(--content) [content-end]
-                           var(--popout) [popout-end]
-                           var(--wide) [wide-end]
-                           var(--full) [full-end];
-    >*{ grid-column: content;}
+  display: grid;
+  grid-template-columns: [full-start] var(--full)
+                         [wide-start] var(--wide)
+                         [popup-start] var(--popout)
+                         [content-start] var(--content) [content-end]
+                         var(--popout) [popout-end]
+                         var(--wide) [wide-end]
+                         var(--full) [full-end];
+  grid-template-rows: min-content;
+
+  >*{ grid-column: content;}
   &__popout{ grid-column: popout;}
   &__wide{ grid-column: wide; }
   &__full{ grid-column: full;}
