@@ -1,0 +1,7 @@
+headline: Contact
+type: fields
+fields:
+    phone:
+        type: tel
+    email:
+        type: email

@@ -1,0 +1,74 @@
+$fontSize: 16px;
+$rhythm: 1.4;
+
+/**
+ * Vertical rhythm by Syncope
+ * http://nowodzinski.pl/syncope
+ */
+
+$v-rhythm-levels: (
+    4: (
+        5.06em,
+        1.09em,
+        0.198em,
+        0.0741em,
+    ),
+    3: (
+        3.38em,
+        1.22em,
+        0.278em,
+        0.13em,
+    ),
+    2: (
+        2.25em,
+        1.22em,
+        0.278em,
+        0.333em,
+    ),
+    1: (
+        1.5em,
+        1.83em,
+        0.583em,
+        0.333em,
+    ),
+    0: (
+        1em,
+        1.38em,
+        0.375em,
+        1em,
+    ),
+    -1: (
+            0.667em,
+            1.6em,
+            0.5em,
+            1.1em,
+        ),
+);
+
+/**
+ * Sets vertical–rhythm for the given level.
+ * Usage:
+ *
+ * 	h1 {
+ * 		@include v-rhythm( 4 );
+ * 	}
+ */
+@mixin v-rhythm($level) {
+    $rhythm: map-get($v-rhythm-levels, $level);
+
+    font-size: nth($rhythm, 1);
+    line-height: nth($rhythm, 2);
+    padding-top: nth($rhythm, 3);
+    margin-bottom: nth($rhythm, 4);
+}
+
+@mixin media-tablet {
+    @media screen and (min-width: 1023px) {
+        @content;
+    }
+}
+@mixin media-desktop {
+    @media screen and (min-width: 1399px) {
+        @content;
+    }
+}

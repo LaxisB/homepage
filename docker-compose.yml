@@ -1,0 +1,11 @@
+version: "3"
+services:
+    website:
+        build: .
+        user: "1000:1000"
+        volumes:
+            - ./site:/var/www/html/site
+            - ./assets:/var/www/html/assets
+            - ./content:/var/www/html/content
+        ports:
+            - 8000:80

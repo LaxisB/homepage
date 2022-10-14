@@ -1,0 +1,34 @@
+@use "vars";
+
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: bold;
+}
+h1 {
+    @include vars.v-rhythm(4);
+}
+h2 {
+    @include vars.v-rhythm(3);
+}
+h3 {
+    @include vars.v-rhythm(2);
+}
+h4 {
+    @include vars.v-rhythm(1);
+}
+
+p {
+    @include vars.v-rhythm(0);
+}
+
+a {
+    color: var(--link-color);
+}
+strong{
+    font-weight: bold;
+    @include vars.v-rhythm(1);
+}
