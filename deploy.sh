@@ -6,7 +6,7 @@ rm -rf vendor
 echo "Installing packages"
 npm ci
 npm run build
-composer install -q
+composer install
 
 
 echo "Deploying"
