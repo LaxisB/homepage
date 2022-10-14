@@ -1,5 +1,4 @@
 <?php snippet("header"); ?>
-<?php snippet("nav"); ?>
 
 <main>
   <div class="card">
