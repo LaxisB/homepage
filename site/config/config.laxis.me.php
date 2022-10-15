@@ -10,6 +10,9 @@
 return [
   "debug" => false,
   "panel.install" => true,
+  "cache" => [
+    "pages" => ["active" => true]
+  ],
   "smartypants" => true,
   "lukaskleinschmidt.terminal.scripts" => [
     "deploy" => 'cd /home/www/homepage && ./deploy.sh',
