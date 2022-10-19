@@ -1,4 +1,4 @@
-# Valean Homepage
+# my Homepage
 
 built using [Kirby CMS](https://getkirby.com)
 
