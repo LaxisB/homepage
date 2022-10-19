@@ -10,7 +10,6 @@
 
   <link rel="preload" href="/assets/css/stylesheet.css" as="style" />
 
-  <?= css(["assets/css/stylesheet.css", "@auto"]) ?>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -24,6 +23,11 @@
 
   <?php snippet("meta_information"); ?>
   <?php snippet("robots"); ?>
+  <?= css(["assets/css/stylesheet.css", "@auto"]) ?>
+  <?= js([
+    // 'assets/js/index.js',
+    "@auto",
+  ], ['async' => true]) ?>
 
 </head>
 
