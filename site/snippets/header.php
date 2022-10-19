@@ -8,6 +8,8 @@
 
   <title><?= $page->title() ?> | laxis.me</title>
 
+  <link rel="preload" href="/assets/css/stylesheet.css" as="style" />
+
   <?= css(["assets/css/stylesheet.css", "@auto"]) ?>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
