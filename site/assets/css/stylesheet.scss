@@ -66,15 +66,13 @@ img {
 
 pre{
     white-space: pre;
-    overflow: auto;
-    width: 100%;
-    min-width: 0;
 }
 
 pre > code {
     white-space: pre-line;
     font-family: monospace;
     display: block;
+    overflow: auto;
 }
 code {
     background: var(--site-foreground);
@@ -133,6 +131,7 @@ code {
 @for $i from 1 through 12 {
     .spans--#{$i} {
         grid-column-start: span #{$i};
+        min-width: 0;
     }
 }
 
