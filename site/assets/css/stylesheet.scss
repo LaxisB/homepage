@@ -64,6 +64,21 @@ img {
     width: 100%;
 }
 
+pre{
+    white-space: pre;
+    overflow: auto;
+}
+
+pre > code {
+    white-space: pre-line;
+    font-family: monospace;
+}
+code {
+    background: var(--site-foreground);
+    color: var(--site-background);
+    padding: .5em;
+}
+
 .content {
     --gap: 1rem;
     --full: minmax(var(--gap), 1fr);
