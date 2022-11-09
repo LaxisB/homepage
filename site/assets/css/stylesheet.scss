@@ -67,11 +67,14 @@ img {
 pre{
     white-space: pre;
     overflow: auto;
+    width: 100%;
+    min-width: 0;
 }
 
 pre > code {
     white-space: pre-line;
     font-family: monospace;
+    display: block;
 }
 code {
     background: var(--site-foreground);
